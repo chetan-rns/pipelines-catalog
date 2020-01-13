@@ -2,10 +2,10 @@
 apiVersion: tekton.dev/v1alpha1
 kind: TaskRun
 metadata:
-  name: s2i-go-run
+  name: s2i-dotnet-2-run
 spec:
   taskRef:
-    name: s2i-go
+    name: s2i-dotnet2
   outputs:
     resources:
       - name: image
@@ -15,7 +15,9 @@ spec:
     resources:
       - name: source
         resourceRef:
-          name: go-ex
+          name: s2i-dotnet-2-ex
     params:
       - name: TLSVERIFY
         value: "false"
+      - name: PATH_CONTEXT
+        value: "app"
