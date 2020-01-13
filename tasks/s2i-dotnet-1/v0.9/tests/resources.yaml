@@ -2,12 +2,12 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
-  name: s2i-dotnet-2-ex
+  name: s2i-dotnet-1-ex
 spec:
   type: git
   params:
     - name: revision
-      value: dotnetcore-2.2
+      value: dotnetcore-1.1
     - name: url
       value: https://github.com/redhat-developer/s2i-dotnetcore-ex
 ---
@@ -19,4 +19,4 @@ spec:
   type: image
   params:
     - name: url
-      value: localhost:5000/s2i-dotnet-2
+      value: localhost:5000/s2i-dotnet-1
